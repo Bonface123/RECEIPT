@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exact Receipt</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.receipt-container {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #002147; /* Bold dark blue border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 1.2em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.header p {
+    font-size: 0.8em;
+    margin: 3px 0;
+}
+
+.header img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.details {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    line-height: 1.5em;
+}
+
+.details p {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+table th, table td {
+    border: 2px solid #002147; /* Bold dark blue border */
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td {
+    font-size: 0.9em;
+}
+
+table td:nth-child(1) {
+    width: 10%; /* Set column width for 'Qty' */
+}
+
+table td:nth-child(2) {
+    width: 50%; /* Set column width for 'Particulars' */
+}
+
+table td:nth-child(3) {
+    width: 15%; /* Set column width for '@' */
+}
+
+table td:nth-child(4) {
+    width: 25%; /* Set column width for 'SHS.' */
+}
+
+table tfoot {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+table tfoot td {
+    border: 2px solid #002147; /* Bold dark blue border */
+    padding: 8px;
+    text-align: left;
+}
+
+table tfoot td:nth-child(3) {
+    text-align: right; /* Aligns "Total" and value to the right */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.download-button {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.download-button button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.download-button button:hover {
+    background-color: #0056b3;
+}
+
+/* Editable Field Styles */
+.editable {
+    border-bottom: 1px dashed #888; /* Dashed line for input */
+    padding: 0 5px;
+    font-size: 1.1em;
+    min-width: 120px; /* Reduced the width */
+    margin: 0 10px;
+}
+
+.editable:empty::before {
+    content: "______"; /* Shorter dashes to fit on one line */
+    color: #bbb;
+}
+
+.editable:focus {
+    border-bottom: 2px solid #333; /* Solid line when focused */
+    outline: none;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="receipt" class="receipt-container">
+        <div class="header">
+            <h1>CASH SALE</h1>
+            <p>Dealers in: Mobile Phones & Accessories</p>
+            <p>Wholesale & Retail</p>
+            <p><strong>Tel:</strong> 0769-942000</p>
+        </div>
+        <p>
+            <strong>M/s:</strong>
+            <span class="editable" contenteditable="true"></span>
+            <strong>Date:</strong>
+            <span class="editable" contenteditable="true"></span>
+        </p>
+        
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Qty</th>
+                    <th>Particulars</th>
+                    <th>@</th>
+                    <th>SHS.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- 10 blank rows for additional items -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>E&.O.E</td>
+                    <td>No:</td>
+                    <td>TOTAL</td>
+                    <td></td>
+                </tr>
+
+            </tfoot>
+        </table>
+
+        <div class="footer">
+            <p>Goods once sold are not returnable</p>
+        </div>
+    </div>
+    <div class="download-button">
+        <button onclick="downloadReceipt()">Download Receipt</button>
+    </div>
+
+    <script>
+        function downloadReceipt() {
+            const receiptElement = document.getElementById('receipt');
+            const options = {
+                margin: 0.5,
+                filename: 'receipt.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(options).from(receiptElement).save();
+        }
+    </script>
+</body>
+</html>
